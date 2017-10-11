@@ -17,7 +17,7 @@ CallableEventEmitter: Mixin of Callable and EventEmitter classes.
 
 ## Usage
 
-
+Extend Callable in ES6
 ```javascript
 const {Callable} = require('putil-callable');
 
@@ -33,9 +33,25 @@ class MyCallable extends Callable {
 }
 const obj1 = new MyCallable();
 obj1('This is a callable class');
+```
+Extend Callable in ES5
+```javascript
+const Callable = require('putil-callable').Callable;
 
+function MyCallable() {  
+  return Callable.call(this, 'handle');  
+}
+MyCallable.prototype = Object.create(Callable.prototype);
+MyCallable.prototype.constructor = MyCallable;
+MyCallable.prototype.handle = function(msg) {
+    console.log('MyCallable:', msg);
+};
+
+const obj1 = new MyCallable();
+obj1('This is a callable class');
 ```
 
+Extend CallableEventEmitter in ES6
 ```js
 const {CallableEventEmitter} = require('putil-callable');
 
