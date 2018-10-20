@@ -4,7 +4,6 @@
 [![NPM Downloads][downloads-image]][downloads-url]
 [![Build Status][travis-image]][travis-url]
 [![Test Coverage][coveralls-image]][coveralls-url]
-[![Dependencies][dependencies-image]][dependencies-url]
 [![DevDependencies][devdependencies-image]][devdependencies-url]
 
 This package contains two very handy callable class implementations.
@@ -76,7 +75,7 @@ obj2.on('msg', function(msg) {
 
 ## Node Compatibility
 
-  - node `>= 0.10`;
+  - node `>= 1`;
   
 ### License
 [MIT](LICENSE)
@@ -89,11 +88,5 @@ obj2.on('msg', function(msg) {
 [coveralls-url]: https://coveralls.io/r/panates/putil-callable
 [downloads-image]: https://img.shields.io/npm/dm/putil-callable.svg
 [downloads-url]: https://npmjs.org/package/putil-callable
-[gitter-image]: https://badges.gitter.im/panates/putil-callable.svg
-[gitter-url]: https://gitter.im/panates/putil-callable?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
-[dependencies-image]: https://david-dm.org/panates/putil-callable/status.svg
-[dependencies-url]:https://david-dm.org/panates/putil-callable
 [devdependencies-image]: https://david-dm.org/panates/putil-callable/dev-status.svg
 [devdependencies-url]:https://david-dm.org/panates/putil-callable?type=dev
-[quality-image]: http://npm.packagequality.com/shield/putil-callable.png
-[quality-url]: http://packagequality.com/#?package=putil-callable

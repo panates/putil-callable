@@ -1,7 +1,7 @@
 {
   "name": "putil-callable",
   "description": "A callable class implementation",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Panates Ltd.",
   "contributors": [
     "Eray Hanoglu <e.hanoglu@panates.com>"
@@ -16,11 +16,11 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "babel-eslint": "^8.0.1",
-    "eslint": "^4.8.0",
-    "eslint-config-google": "^0.9.1",
-    "istanbul": "^0.4.5",
-    "mocha": "^4.0.1"
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.7.0",
+    "eslint-config-google": "^0.11.0",
+    "nyc": "^13.1.0",
+    "mocha": "^5.2.0"
   },
   "engines": {
     "node": ">= 1.0"
@@ -33,9 +33,12 @@
     "README.md",
     "lib/"
   ],
+  "nyc": {
+    "temp-directory": "./coverage/.nyc_output"
+  },
   "scripts": {
-    "test": "mocha --require test/support/env --reporter spec --bail --check-leaks test/",
-    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --require test/support/env --reporter dot --check-leaks test/",
-    "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --require test/support/env --reporter spec --check-leaks test/"
+    "test": "mocha --require ./test/support/env --reporter spec --bail --check-leaks test/",
+    "cover": "nyc --reporter html --reporter text npm run test",
+    "travis-cover": "nyc --reporter lcovonly npm run test"
   }
 }
