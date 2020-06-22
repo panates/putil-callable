@@ -5,11 +5,11 @@ declare module "putil-callable" {
 
 
     class Callable {
-        constructor(callProperty: string);
+        constructor(callProperty?: string);
     }
 
     class CallableEventEmitter extends EventEmitter {
-        constructor(callProperty: string);
+        constructor(callProperty?: string);
     }
 
     interface Callable extends Function {
